@@ -1,24 +1,12 @@
-let num = 266219,
-    result = 1;
-while (num > 0) {
-    result = result * (num % 10);
-    num = num / 10;
-    num = Math.trunc(num);
-}
-console.log(result);
+'use strict';
+const num = 266219,
+numArr = num.toString().split(''),
+reducer = (prev, next) => prev * next,
+result1 = numArr.reduce(reducer),
+result2 = result1 ** 3,
+firstSecond = result2.toString().slice(0, 2);
 
-result = result ** 3;
-console.log (result);
+console.log(result1);
+console.log(result2);
+console.log(firstSecond);
 
-while (result > 0) {
-
-    if ((result < 100) && (result >= 10)) {
-        console.log("Вторая цифра: " + (result % 10));
-    };
-
-    if (result <= 10){
-        console.log("Первая цифра: " + (result % 10))
-    } 
-
-    result = Math.trunc(result/10);
-}
